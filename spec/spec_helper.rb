@@ -6,11 +6,7 @@ require 'mongoid'
 require 'mongoid-app_settings'
 
 ENV["MONGOID_ENV"] = "test"
-if Mongoid::VERSION > '3'
-  Mongoid.load!("#{File.dirname(__FILE__)}/mongoid3.yml")
-else
-  Mongoid.load!("#{File.dirname(__FILE__)}/mongoid2.yml")
-end
+Mongoid.load!("#{File.dirname(__FILE__)}/mongoid.yml")
 Mongoid.logger.level = Logger::INFO
 
 # Requires supporting files with custom matchers and macros, etc,
