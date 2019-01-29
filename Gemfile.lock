@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mongoid-app_settings (1.3.0)
+    mongoid-app_settings (2.0.0)
       activesupport
       mongoid (>= 5.0)
 
