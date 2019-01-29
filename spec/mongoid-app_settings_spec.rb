@@ -126,6 +126,13 @@ describe "Mongoid::AppSettings" do
   end
 
   describe "reload behaviour" do
+    it "should return assigned value after reload" do
+      settings.instance_eval { setting :foo }
+      expect(settings.foo).to be_nil
+      settings.foo = "bar"
+      expect(settings.reload.foo).to eq "bar"
+    end
+
     it "should not reload for every call" do
       settings.instance_eval { setting :foo }
       other_settings.instance_eval { setting :foo }
