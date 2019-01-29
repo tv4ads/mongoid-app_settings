@@ -34,7 +34,7 @@ module Mongoid
         settings[name.to_s] = options
 
         Record.instance_eval do
-          field name, options.slice(:type)
+          field name, options.slice(:type).merge!(overwrite: true)
         end
 
         @base.class.class_eval do
@@ -56,7 +56,7 @@ module Mongoid
 
       # Unsets a set value, resetting it to its default
       def delete(setting)
-        @record.unset(setting)
+        record.unset(setting)
       end
 
       def all
@@ -86,8 +86,7 @@ module Mongoid
       end
 
       def record # :nodoc:
-        return @record if @record
-        @record = Record.find_or_create_by(:key => "settings")
+        @record ||= Record.find_or_create_by(:key => "settings")
       end
 
       def [](name) # :nodoc:
