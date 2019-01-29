@@ -1,3 +1,0 @@
-test:
-  database: mongoid-app_settings_test
-  host: localhost

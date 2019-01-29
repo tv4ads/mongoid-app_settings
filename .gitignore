@@ -46,3 +46,7 @@ pkg
 
 # For rubinius:
 #*.rbc
+
+# For Appraisal
+gemfiles/*.gemfile.lock
+

@@ -99,19 +99,7 @@ module Mongoid
       end
 
       def []=(name, value) # :nodoc:
-        if value
-          if Mongoid::VERSION > '4'
-            record.set(name => value)
-          else
-            record.set(name, value)
-          end
-        else
-          # FIXME Mongoid's #set doesn't work for false/nil.
-          # Pull request has been submitted, but until then
-          # this workaround is needed.
-          record[name] = value
-          record.save
-        end
+        record.set(name => value)
       end
     end
   end
