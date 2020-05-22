@@ -63,6 +63,8 @@ might want to do something like
 
 # Changelog
 
+* 2.1.0 - Add support for Ruby 2.7 and Rails 6
+* 2.0.0 - Add support for Mongoid 5, 6, and 7
 * 1.3.0 - Added support for converting to proper types, using Mongoid's conversion.
 * 1.2.0 - Added chaining behaviour for reload: `AppSettings.reload.some_setting` is now possible.
 * 1.1.1 - Add support for Mongoid 4 (available in git). Still supports Mongoid 2 and 3.
