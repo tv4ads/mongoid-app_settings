@@ -50,3 +50,5 @@ pkg
 # For Appraisal
 gemfiles/*.gemfile.lock
 
+Gemfile.lock
+.ruby-version
